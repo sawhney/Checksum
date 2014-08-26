@@ -1,0 +1,23 @@
+{
+    "name": "Checksum",
+    "version": "0.0.1",
+    "description": "Automatically computes the md5 hash of a downloaded file and compares it to the checksum if avaiable.",
+    "background": { 
+        "scripts": ["background.js"] 
+        },
+    "content_scripts": [
+        {   
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["checksum_content_script.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "http://*/",
+        "https://*/"
+    ],
+    "page_action": {
+        "default_name": "Checksum"
+    },
+    "manifest_version": 2
+}
